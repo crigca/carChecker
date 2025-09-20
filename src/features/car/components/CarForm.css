@@ -1,0 +1,244 @@
+/* Car Form Styles - Mobile First */
+
+.car-form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  background: var(--color-bg-primary);
+}
+
+.car-form-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.car-form-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.car-form-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Form Styles */
+.car-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.form-input:disabled,
+.form-select:disabled {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+.form-input-error {
+  border-color: var(--color-danger);
+}
+
+.form-input-error:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Form Row for Side-by-Side Fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+/* Error Messages */
+.form-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  margin: 0;
+}
+
+.form-error-general {
+  padding: var(--spacing-md);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+/* Action Buttons */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.btn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-medium);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-border-light);
+}
+
+/* Tablet Styles */
+@media (min-width: 640px) {
+  .car-form-container {
+    max-width: 500px;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn {
+    flex: 1;
+    max-width: 150px;
+  }
+
+  .form-actions .btn:last-child {
+    margin-left: auto;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .car-form-container {
+    max-width: 600px;
+    padding: var(--spacing-2xl);
+  }
+
+  .car-form-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .car-form-subtitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Loading State */
+.car-form .btn:disabled {
+  position: relative;
+}
+
+.car-form .btn:disabled::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Focus Management for Better Accessibility */
+.form-input:focus-visible,
+.form-select:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .form-input,
+  .form-select {
+    border-width: 3px;
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+}

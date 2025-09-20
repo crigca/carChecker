@@ -1,0 +1,215 @@
+/* Car Info Component Styles - Mobile First */
+
+.car-info-container {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.car-info-compact {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+/* Header Section */
+.car-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.car-info-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.car-info-compact .car-info-title {
+  font-size: var(--font-size-lg);
+}
+
+.car-info-edit-btn {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.car-info-edit-btn:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-dark);
+}
+
+.car-info-edit-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Details Section */
+.car-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.car-info-compact .car-info-details {
+  gap: var(--spacing-sm);
+}
+
+.car-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.car-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.car-info-compact .car-info-row {
+  padding: var(--spacing-xs) 0;
+}
+
+.car-info-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.car-info-value {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: 500;
+  text-align: right;
+  word-break: break-word;
+}
+
+.car-info-compact .car-info-label,
+.car-info-compact .car-info-value {
+  font-size: var(--font-size-sm);
+}
+
+/* Loading State */
+.car-info-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.car-info-loading::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-right: var(--spacing-md);
+  border: 2px solid var(--color-border-light);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Empty State */
+.car-info-empty {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.car-info-empty-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.car-info-empty-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tablet Styles */
+@media (min-width: 640px) {
+  .car-info-container {
+    padding: var(--spacing-xl);
+  }
+
+  .car-info-compact {
+    padding: var(--spacing-lg);
+  }
+
+  .car-info-header {
+    align-items: center;
+  }
+
+  .car-info-row {
+    padding: var(--spacing-md) 0;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .car-info-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .car-info-compact .car-info-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .car-info-edit-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .car-info-container {
+    border-width: 2px;
+  }
+  
+  .car-info-edit-btn {
+    border-width: 2px;
+  }
+
+  .car-info-row {
+    border-bottom-width: 2px;
+  }
+}
+
+/* Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .car-info-edit-btn {
+    display: none;
+  }
+  
+  .car-info-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}

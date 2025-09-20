@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# 🚗 Car Maintenance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and clean React application to track vehicle maintenance records. Manage up to 3 vehicles with their basic information and maintenance history.
 
-Currently, two official plugins are available:
+## 🌟 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Live Demo**: [Coming Soon]
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Vehicle Management**: Add, view, edit, and delete up to 3 vehicles
+- **Simple Interface**: Clean, intuitive design with easy navigation
+- **Vehicle Information**: Track brand, model, year, kilometers, fuel type, and license plate
+- **Local Storage**: Data persists locally in your browser
+- **Responsive Design**: Works on desktop and mobile devices
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (version 20.19+ or 22.12+)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd carChecker
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies
+```bash
+npm install
 ```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 🛠️ Built With
+
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **CSS Custom Properties** - Styling system
+
+## 📱 Usage
+
+1. **Home Page**: Choose to view, edit, or add vehicles
+2. **Add Vehicle**: Fill out the form with your vehicle details
+3. **View Vehicles**: See your vehicle information in a clean layout
+4. **Edit/Delete**: Modify or remove vehicles as needed
+
+## 🎯 Project Structure
+
+```
+src/
+├── app/                    # Main application component
+├── features/
+│   └── car/               # Car feature module
+│       ├── components/    # React components
+│       ├── context/       # State management
+│       ├── hooks/         # Custom hooks
+│       ├── services/      # Data services
+│       └── types/         # TypeScript types
+├── shared/               # Shared utilities and styles
+└── types/               # Global type definitions
+```
+
+## 🤝 Contributing
+
+This is a simple personal project. Feel free to fork and modify for your own use!
